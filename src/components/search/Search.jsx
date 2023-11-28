@@ -1,10 +1,20 @@
-import React from 'react'
-import './search.css'
+import React from "react";
+import "./search.css";
 
-const Search = () => {
+const Search = ({ search, handleChange }) => {
   return (
-    <div>Search</div>
-  )
-}
+    <div className="search">
+      <input
+        type="text"
+        name="search"
+        value={search}
+        placeholder="search your favorite cocktail"
+        onChange={(e) => {
+          handleChange(e);
+        }}
+      />
+    </div>
+  );
+};
 
-export default Search
+export default Search;

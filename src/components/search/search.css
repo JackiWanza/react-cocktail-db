@@ -1,0 +1,11 @@
+.search{
+    margin: 2rem;
+}
+input{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
