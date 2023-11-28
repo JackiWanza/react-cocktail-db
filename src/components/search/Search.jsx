@@ -1,7 +1,7 @@
 import React from "react";
 import "./search.css";
 
-const Search = ({ search, handleChange }) => {
+const Search = ({ search, handleChange, setCocktails }) => {
   return (
     <div className="search">
       <input
@@ -13,6 +13,20 @@ const Search = ({ search, handleChange }) => {
           handleChange(e);
         }}
       />
+      <button
+        onClick={() => {
+          fetch(
+            `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`
+          )
+            .then((response) => response.json())
+            .then((json) => {
+              console.log(json);
+              setCocktails(json.drinks)
+            });
+        }}
+      >
+        search
+      </button>
     </div>
   );
 };
